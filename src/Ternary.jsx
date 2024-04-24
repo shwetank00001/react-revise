@@ -19,7 +19,7 @@ function Proptest(props){
                 {value ? "Hide Answer" : "Show Answer"}
             </button>
             <hr></hr>
-        </div>
+        </div>       
     );
 }
 
