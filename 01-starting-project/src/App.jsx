@@ -1,10 +1,8 @@
 const desc = ['Main', 'Fundamental', 'Core']
 
-function randomInt(max){
-  return(Math.floor(Math.random() * (max + 1)))
-
+function randomInt(number){
+  return Math.floor(Math.random() * (number+1))
 }
-
 
 
 function Header(){
@@ -17,8 +15,8 @@ function Header(){
               />
               <h1>React Essentials</h1>
               <p>
-                  {desc[randomInt(2)]} React concepts you will need for almost any
-                  app you are going to build!
+                  {desc[randomInt(2)]}React concepts you will need for almost
+                  any app you are going to build!
               </p>
           </header>
       </div>
