@@ -69,9 +69,10 @@ function App() {
                   {ele}
 
 
-                  WE LEARNED A NEW TRICK - IMPORTANT // A shortcut to use spread operator
+                  WE LEARNED A NEW TRICK - IMPORTANT // A shortcut to use spread operator- This is alazy version of this hehe xD
                   <CoreConcept {...CORE_CONCEPTS[0]} />
                   <CoreConcept {...CORE_CONCEPTS[1]} />
+                  <CoreConcept {...CORE_CONCEPTS[2]} />
               </section>
           </main>
       </div>
