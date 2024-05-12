@@ -15,6 +15,12 @@ function App() {
           />
       );
   });
+
+  
+  // sending this handleclick to tabButton compo using onSelect prop keyword. Using it on the child by destructuing and setting it to onClick.
+  function handleClick(selectedVal){
+    console.log(selectedVal)
+  }
   return (
       <div>
           <Header />
@@ -40,11 +46,13 @@ function App() {
 
                 JSX, anything written in between of A REACT component is a childre
                 <main>
-                  <TabButton>JSX</TabButton>
-                  <TabButton>Component</TabButton>
-                  <TabButton>Props</TabButton>
-                  <TabButton>State</TabButton>
+                  <TabButton onSelect = {() => {handleClick('jsx')}}>JSX</TabButton>
+                  <TabButton onSelect={ () => handleClick('Components')} >Component</TabButton>
+                  <TabButton onSelect={() => handleClick('Props')}>Props</TabButton>
+                  <TabButton onSelect={() => handleClick('State')}>State</TabButton>
                 </main>
+
+                Dynamic Content
 
               </section>
           </main>
