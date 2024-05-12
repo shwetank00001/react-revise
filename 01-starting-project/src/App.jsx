@@ -3,6 +3,8 @@ import Header from './components/Header'
 import CoreConcept from './components/CoreConcept'
 import TabButton from './components/TabButton';
 
+import { useState } from 'react';
+
 
 function App() {
 
@@ -19,8 +21,20 @@ function App() {
   
   // sending this handleclick to tabButton compo using onSelect prop keyword. Using it on the child by destructuing and setting it to onClick.
   function handleClick(selectedVal){
-    console.log(selectedVal)
+    if (selectedVal == "jsx") {
+      setDynamicContent('This is jsx')
+    } else if (selectedVal == "Components") {
+      setDynamicContent("Components it is")
+    }
+     else if (selectedVal == "Props") {
+      setDynamicContent("Props boy")
+    }
+     else if (selectedVal == "State") {
+      setDynamicContent("We updated the DOM using state")
+    }
   }
+
+  const [ dynamicContent,  setDynamicContent ] = useState()
   return (
       <div>
           <Header />
@@ -41,19 +55,29 @@ function App() {
                   <CoreConcept {...CORE_CONCEPTS[2]} />
               </section>
 
-              <section id='examples'>
-                <h2>examples</h2>
-
-                JSX, anything written in between of A REACT component is a childre
-                <main>
-                  <TabButton onSelect = {() => {handleClick('jsx')}}>JSX</TabButton>
-                  <TabButton onSelect={ () => handleClick('Components')} >Component</TabButton>
-                  <TabButton onSelect={() => handleClick('Props')}>Props</TabButton>
-                  <TabButton onSelect={() => handleClick('State')}>State</TabButton>
-                </main>
-
-                Dynamic Content
-
+              <section id="examples">
+                  <h2>examples</h2>
+                  JSX, anything written in between of A REACT component is a
+                  childre
+                  <main>
+                      <TabButton
+                          onSelect={() => {
+                              handleClick("jsx");
+                          }}
+                      >
+                          JSX
+                      </TabButton>
+                      <TabButton onSelect={() => handleClick("Components")}>
+                          Component
+                      </TabButton>
+                      <TabButton onSelect={() => handleClick("Props")}>
+                          Props
+                      </TabButton>
+                      <TabButton onSelect={() => handleClick("State")}>
+                          State
+                      </TabButton>
+                  </main>
+                  {dynamicContent}
               </section>
           </main>
       </div>
