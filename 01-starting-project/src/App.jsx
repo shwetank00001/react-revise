@@ -18,7 +18,7 @@ function App() {
         );
     });
 
-    const [dynamicContent, setDynamicContent] = useState("jsx");
+    const [dynamicContent, setDynamicContent] = useState();
 
     // sending this handleclick to tabButton compo using onSelect prop keyword. Using it on the child by destructuing and setting it to onClick.
     function handleClick(selectedVal) {
@@ -85,13 +85,17 @@ function App() {
                     </main>
                     {/* {dynamicContent} */}
                     {/* HEre we can use a data dynamically from our data.js file. */}
-                    <div id="tab-content">
-                        <h3>{EXAMPLES[dynamicContent].title}</h3>
-                        <p>{EXAMPLES[dynamicContent].description}</p>
-                        <pre>
-                            <code>{EXAMPLES[dynamicContent].code}</code>
-                        </pre>
-                    </div>
+                    {!dynamicContent ? (
+                        <p>Please select a tab</p>
+                    ) : (
+                        <div id="tab-content">
+                            <h3>{EXAMPLES[dynamicContent].title}</h3>
+                            <p>{EXAMPLES[dynamicContent].description}</p>
+                            <pre>
+                                <code>{EXAMPLES[dynamicContent].code}</code>
+                            </pre>
+                        </div>
+                    )}
                 </section>
             </main>
         </div>
