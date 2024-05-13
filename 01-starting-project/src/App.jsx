@@ -9,6 +9,7 @@ import { useState } from 'react';
 
 function App() {
     const ele = CORE_CONCEPTS.map(function (item) {
+
         return (
             <CoreConcept
                 image={item.image}
@@ -41,6 +42,20 @@ function App() {
 
     console.log(dynamicContent);
 
+    let tabContent = <p>Please select a tab</p>;
+
+    if(dynamicContent){
+        tabContent = 
+           ( <div id="tab-content">
+                <h3>{EXAMPLES[dynamicContent].title}</h3>
+                <p>{EXAMPLES[dynamicContent].description}</p>
+                <pre>
+                    <code>{EXAMPLES[dynamicContent].code}</code>
+                </pre>
+            </div>)
+        
+    }
+
     return (
         <div>
             <Header />
@@ -66,26 +81,22 @@ function App() {
                     JSX, anything written in between of A REACT component is a
                     childre
                     <main>
-                        <TabButton
-                            onSelect={() => {
-                                handleClick("jsx");
-                            }}
-                        >
+                        <TabButton isSelected={dynamicContent === "jsx"} onSelect={() => { handleClick("jsx");}} >
                             JSX
                         </TabButton>
-                        <TabButton onSelect={() => handleClick("components")}>
+                        <TabButton isSelected={dynamicContent === "components"} onSelect={() => handleClick("components")}>
                             Component
                         </TabButton>
-                        <TabButton onSelect={() => handleClick("props")}>
+                        <TabButton isSelected={dynamicContent === "props"} onSelect={() => handleClick("props")}>
                             Props
                         </TabButton>
-                        <TabButton onSelect={() => handleClick("state")}>
+                        <TabButton isSelected={dynamicContent === "state"} onSelect={() => handleClick("state")}>
                             State
                         </TabButton>
                     </main>
                     {/* {dynamicContent} */}
                     {/* HEre we can use a data dynamically from our data.js file. */}
-                    {!dynamicContent ? (
+                    {/* {!dynamicContent ? (
                         <p>Please select a tab</p>
                     ) : (
                         <div id="tab-content">
@@ -95,7 +106,8 @@ function App() {
                                 <code>{EXAMPLES[dynamicContent].code}</code>
                             </pre>
                         </div>
-                    )}
+                    )} */}
+                    {tabContent}
                 </section>
             </main>
         </div>
