@@ -76,6 +76,10 @@ function App() {
                     <CoreConcept {...CORE_CONCEPTS[2]} />
                 </section>
 
+                <section>
+                    {ele}
+                </section>
+
                 <section id="examples">
                     <h2>examples</h2>
                     JSX, anything written in between of A REACT component is a
