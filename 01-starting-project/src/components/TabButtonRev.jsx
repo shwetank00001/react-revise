@@ -1,12 +1,12 @@
 import React from 'react'
 
-const TabButtonRev = ({children, onSelect}) => {
-
-    function handleOpen(){
-        console.log("1")
+const TabButtonRev = ({children, onSelect, selectedValue}) => {
+    const buttonColor = {
+        backgroundColor: selectedValue?"Yellow" : "White"
     }
+
   return (
-    <button onClick={onSelect} >{children}</button>
+    <button style={buttonColor} onClick={onSelect} >{children}</button>
   )
 }
 

@@ -33,10 +33,10 @@ const AppRev = () => {
         here we will have 4 buttons
       </h4>
 
-      <TabButtonRev onSelect= { () => {handleSelect("jsx");}} >jsx</TabButtonRev>
-      <TabButtonRev onSelect= { () => {handleSelect("components");}}>components</TabButtonRev>
-      <TabButtonRev onSelect= { () => {handleSelect("state");}}>state</TabButtonRev>
-      <TabButtonRev onSelect= { () => {handleSelect("props");}}>props</TabButtonRev>
+      <TabButtonRev selectedValue={value === "jsx"} onSelect= { () => {handleSelect("jsx");}} >jsx</TabButtonRev>
+      <TabButtonRev selectedValue={value === "components"} onSelect= { () => {handleSelect("components");}}>components</TabButtonRev>
+      <TabButtonRev selectedValue={value === "state"} onSelect= { () => {handleSelect("state");}}>state</TabButtonRev>
+      <TabButtonRev selectedValue={value === "props"} onSelect= { () => {handleSelect("props");}}>props</TabButtonRev>
 
       <div>
         {tabContent}
