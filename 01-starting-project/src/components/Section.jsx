@@ -1,6 +1,7 @@
 import React from 'react'
 
-const Section = ({ title, children, id}) => {
+// Proxy prop component
+const Section = ({ title, children, ...props}) => {
   return (
     <section id='id'>
         <h2>{title}</h2>

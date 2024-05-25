@@ -5,6 +5,8 @@ import CoreConcept from './components/CoreConcept'
 import FirstSection from "./components/FirstSection";
 import SecondSection from "./components/SecondSection";
 
+import Tabs from "./components/Tabs";
+
 
 
 
@@ -27,7 +29,7 @@ function App() {
                 <FirstSection />
                 <SecondSection />
 
-                <section>{ele}</section>
+                {/* <section>{ele}</section> */}
             </main>
         </>
     );
